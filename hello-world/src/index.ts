@@ -1,4 +1,5 @@
 console.log("hello world");
 
-let age: number = 18;
+let ages: number =20;
+
 
