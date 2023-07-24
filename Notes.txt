@@ -1,0 +1,27 @@
+a programming language that was created to address the shortcoming of js
+it was build on top of js. Every js file is a valid typescript file 
+typescript is js with typechecking
+
+Ts benefits 
+1. Static typing
+-> type which are not changed during runtime 
+->language such as c++,java 
+-> for example 
+int number=10
+number="a"     //this is not allowed
+
+Dynamic typing 
+->type which can be changed durinng runtime 
+->language such as python, javascript 
+->for example
+int number=10
+number="jofin"    //this may be allowedd
+
+2. code completion
+3.refactoring
+4. shorthand notations
+
+drawbacks
+1. compilation (we always need  to transpile  the typescript , because browser cannot understand)
+transpilation:- converting ts into js
+2.it is used to build in production level project (medium to large) .To save money and time 
