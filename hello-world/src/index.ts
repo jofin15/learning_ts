@@ -1,5 +1,8 @@
-console.log("hello world");
+let sales: number=123456;
+let course:string = "Angular";
+let is_pulished:boolean = true;
 
-let ages: number =20;
-
+let level;
+level = 10;
+level = "a";
 
