@@ -72,12 +72,104 @@
 
 
 //functiONS
-function calculateTax(income:number):number{
-    if(income<50000){
-        return 0
-    }
-    else{
-        return 1
-    }
+// function calculateTax(income:number,taxYear:number=2022):number{
+//     if(taxYear<2022){
+//         return income*1.12
+//     }
+//     else{
+//         return income*1.13
+//     }
+// }
+
+// calculateTax(10000)
+
+
+
+
+
+//objects
+/*in js objects are dynamic. In js you can dynamically change the value of the element . Also you can add new elements inside
+the object dynammically .For example
+*/
+
+// let employee={id:1}
+// employee.name="jofin"
+
+//But in typescript you cant do that 
+
+// let employee={id:1}
+// employee.name="jofin"  //we are getting an error
+
+// let employee: { //defining type of the all the element in that object
+//     readonly id: number,   //readonly allows you to not change that specific elements value
+//     name: string,
+//     isLoggedIn: boolean,
+//     retire: (date: Date) => void   //if you want to define function and its type
+// } = { //assigning value to all the element in the object
+//     id: 1,
+//     name: "jofin",
+//     isLoggedIn: true,
+//     retire: (date) => {
+//         console.log(date);
+
+//     }
+// }
+
+
+// employee.isLoggedIn = false
+// // employee.id=20;  //you cant assign value because it is readonly
+// console.log(employee);
+// // employee.retire()
+
+
+
+
+//using type alias
+//in the above code , it has following challenges. 1. The object becomes lengthy. 2.its still follow dry principle (dont repeat your code). So we will be using Type Aliases
+
+// type Employee={
+//     readonly id: number,   //readonly allows you to not change that specific elements value
+//     name: string,
+//     isLoggedIn: boolean,
+//     retire: (date: Date) => void   //if you want to define function and its type
+
+// }
+
+// let employee: Employee = { //assigning value to all the element in the object
+//     id: 1,
+//     name: "jofin",
+//     isLoggedIn: true,
+//     retire: (date) => {
+//         console.log(date);
+
+//     }
+// }
+
+
+
+
+//Union Types
+//what if you have a parameter who could have two different types in a function. and you want to use them both 
+//we will use Unio type
+
+function kgToLbs(weight:number | string ):number{
+// weight.    => if you use weight alone it will only give you properties which are common to both number and string 
+
+
+// so we will be using Narrowing method
+if (typeof weight==="number"){
+    // weight.   // here when you use "weight."" you will see all the number properties 
+    return weight*2
+
+}else{
+    // weight. //here when you use "weight.", you will see all the string properties
+    return parseInt(weight)*5;
+}
 }
 
+console.log( 
+    kgToLbs("100")
+ );
+ console.log( 
+    kgToLbs(200)
+ );
