@@ -1,12 +1,8 @@
 "use strict";
-function kgToLbs(weight) {
-    if (typeof weight === "number") {
-        return weight * 2;
-    }
-    else {
-        return parseInt(weight) * 5;
-    }
-}
-console.log(kgToLbs("100"));
-console.log(kgToLbs(200));
+let textBox = {
+    drag() {
+    },
+    resize() {
+    },
+};
 //# sourceMappingURL=index.js.map

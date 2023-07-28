@@ -152,24 +152,48 @@ the object dynammically .For example
 //what if you have a parameter who could have two different types in a function. and you want to use them both 
 //we will use Unio type
 
-function kgToLbs(weight:number | string ):number{
-// weight.    => if you use weight alone it will only give you properties which are common to both number and string 
+// function kgToLbs(weight:number | string ):number{
+// // weight.    => if you use weight alone it will only give you properties which are common to both number and string 
 
 
-// so we will be using Narrowing method
-if (typeof weight==="number"){
-    // weight.   // here when you use "weight."" you will see all the number properties 
-    return weight*2
+// // so we will be using Narrowing method
+// if (typeof weight==="number"){
+//     // weight.   // here when you use "weight."" you will see all the number properties 
+//     return weight*2
 
-}else{
-    // weight. //here when you use "weight.", you will see all the string properties
-    return parseInt(weight)*5;
+// }else{
+//     // weight. //here when you use "weight.", you will see all the string properties
+//     return parseInt(weight)*5;
+// }
+// }
+
+// console.log( 
+//     kgToLbs("100")
+//  );
+//  console.log( 
+//     kgToLbs(200)
+//  );
+
+
+
+//intersection
+// let weight:number & string ; //this type represents, an object which is both a number and a string at a same time 
+
+type Draggable ={
+    drag:()=>void
 }
+
+type Resizable={
+    resize:()=>void
 }
 
-console.log( 
-    kgToLbs("100")
- );
- console.log( 
-    kgToLbs(200)
- );
+type UIWidget=Draggable & Resizable;
+
+let textBox:UIWidget={
+    drag() {
+        
+    },
+    resize() {
+        
+    },
+}
